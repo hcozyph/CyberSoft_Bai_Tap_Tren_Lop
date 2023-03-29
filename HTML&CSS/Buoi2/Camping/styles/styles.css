@@ -1,0 +1,214 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+/* padding: khoảng cách từ nội dung đến đường viền của thẻ theo thứ tự TOP - RIGHT - BOTTOM - LEFT */
+.container{
+    max-width: 1440px; /*1280*/
+    margin: 0 auto;
+}
+
+.clear{
+    clear: both; /*clear thuộc tính float:left*/
+}
+
+/* HEADER */
+.header{
+    background-color: #f8e1db;
+    padding: 10px 0px 10px 50px;
+}
+
+.header .nav a{
+    text-decoration: none;
+    /* text-decoration is attribute */
+    color:black;
+    display: inline-block;
+    margin-right: 30px;
+    margin-top: 10px;
+}
+
+/* CAROUSEL */
+.carousel{
+    height: 100vh;
+    min-height: 400px;
+    /*  vh: toàn bộ chiều cao khung hình
+        min-height: chiều cao tối thiểu của thẻ được hiển thị
+        vd: một tấm ảnh trong máy tính có thể nhỏ nhưng nếu đặt vào điện thoại sẽ bị to -> set ming-height để tấm hình tự điều chỉnh phù hợp với kích thước điện thoại
+    */
+    background-image: url(../camping_img/BG.png);
+    /* Hình sẽ chưa hiển thị ngay => chỉnh chiều cao cho thẻ div */
+    
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* ACTIVITIES */
+.activities{
+    background-color: #faf4f2;
+    padding-top: 100px;
+    text-align: center;
+    color: #8d8d8d;
+}
+/* Thẻ con được KẾ THỪA từ thẻ cha
+    font-size
+    font-weight
+    color
+    text-align
+*/
+
+/* PRODUCTS */
+/* .products{
+    background-color: #faf4f2;
+} */
+
+.products{
+    background-color: #faf4f2;
+    padding-top: 50px;
+    height: 600px;
+    max-width: 100vw;
+    /* padding-left: 5%; */
+}
+
+
+/* CẨN THẬN SAI CẤU TRÚC THẺ DIV */
+.products .product-list .product-item{
+    float:left;
+    width: calc(25% - 30px);
+    /* Để cân chỉnh cho đều hơn thì nên dùng cách trên */
+    box-sizing: border-box;
+    /* border: 1px solid black; */
+    text-align: center;
+    margin: 0 15px;
+    background-color: #fff;
+    border-radius: 30px; /*Thuộc tính để bo góc đường viền*/
+    padding: 20px;
+}
+
+    
+.products .product-list .product-item .product-img{
+   
+    /* Ví dụ: hình ảnh có chiều rộng 500px mà div cha chỉ có 300px thì hình sẽ tràn viền => vì vậy ta sẽ chỉnh độ rộng của hình là 100%*/
+
+    width: 100%;
+    /* height: 300pz;*/
+    object-fit: cover;
+    /* Tự động cắt ảnh để không vị scake ảnh(300%)*/
+}
+
+.products .product-list .product-item .content a{
+    display: inline-block;
+    width: 200px;
+    padding: 15px 30px;
+    margin-top: 10px;
+    border-radius: 15px;
+    color: #8d8d8d;
+    background-color: rgb(240,240,240);
+    text-decoration: none;
+}
+
+.products .product-list .product-item .content p{
+    line-height: 1.5; /*Chiều cao giữa các dòng văn bản*/
+    color: #8d8d8d;
+}
+
+.products .product-list .product-item .content h3{
+    padding: 15px 0;
+}
+
+
+.products .product-list .product-item .content i{
+color: red;
+    font-size: 20px;
+    background: rgba(255,255,255,0.6);
+    padding: 10px;
+}
+
+/* 
+    position: setup vị trí của phân tử trên layout, gồm 4 chính
+    
+    >>fixed: lấy phần tử đó ra và canh theo vị trí của body
+
+    >>relative: lấy phần tử ra gốc tọa độ tại vị trí của thẻ
+
+    >>absolute: lấy phần tử đó ra gốc tọa độ tại vị trí relative gần nhất( Thông thường dùng absolute thì phải xét cha relative)
+
+    >>static: phần tử được đặt ở vị trí mặc định
+    z-index: chỉ số ưu tiên khi các thẻ được position đè lên nhau
+*/
+.products .product-list .product-item .content {
+    position: relative;
+}
+.products .product-list .product-item .content i{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border-radius: 10px;
+}
+
+.products .view-all{
+    text-align: center;
+}
+.products .view-all a{
+    display: inline-block;
+    padding: 15px 30px;
+    border: 1px solid orange;
+    border-radius: 25px;
+    color: orange;
+    text-decoration: none;
+}
+
+/* FOOTER */
+.footer{
+    background-color: #f8e1db;
+    padding: 5%;
+    border-radius: 10%;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    /* text-align: center; */
+}
+
+.footer .menu-footer{
+    min-height: 50px;
+
+}
+
+.footer .menu-footer .menu-item{
+    float: left;
+    width: 20%;
+}
+
+.footer .menu-footer .menu-item:first-child{
+    width: 40%;
+
+}
+
+.footer .menu-footer .menu-item .content{
+    padding-left: 25px;
+}
+
+.footer .menu-footer .menu-item .content p{
+    line-height: 2;
+}
+
+.footer .menu-footer .menu-item .content h1{
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+.footer .menu-footer .menu-item .content ul{
+}
+
+.footer .menu-footer .menu-item .content ul li{
+    list-style: none;
+    line-height: 2;
+
+}
+
+.footer .menu-footer .menu-item .content ul li a{
+    text-decoration: none;
+    color: black;
+    font-weight: 100;
+    font-size: 16px;
+}

@@ -1,0 +1,410 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Oswald", sans-serif;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.header {
+  /* background-color: black; */
+  background: transparent; /*transparent là không có màu*/
+  height: 80px;
+  border-bottom: 1px solid #fff;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+}
+/*display-flex: chỉnh ở phần cha*/
+.header .container {
+  display: flex;
+  height: 100%;
+  flex-direction: row; /*
+        Đổi trục chính của phần tử cha 
+        row: trục chính là trục ngang
+        column: trục chính là trục dọc
+    */
+  justify-content: space-between; /*
+        Dùng để load item theo trục chính của flex
+        flex-start: từ trái qua phải hoặc trên xuống dưới
+        center: từ giữa đi ra 
+        flex-end: từ bên phải qua trái hoặc dưới lên trên
+        space-between: load từ 2 bên lần lượt đi vào trong
+        space-around: load theo đều khoảng cách phần từ con
+    */
+  align-items: center;
+}
+.header a {
+  color: #fff;
+}
+
+.header .logo {
+  font-size: 30px;
+  text-decoration: none;
+}
+
+.header .menu a {
+  font-size: 16px;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 400;
+  text-transform: uppercase;
+  /*
+        text-transform: uppercase viết hoa tất cả các chữ
+        text-transform:lowercase viết thường tất cả các chữ
+    */
+  /* transition: all  0.5s;  */
+}
+.header .menu a:hover {
+  /*:hover là hiệu rê chuột vào*/
+  color: red;
+  transition: color 0.5s;
+  /* transition-duration: 0.5s; */
+  /*
+        transition: setup thay đổi màu sắc, kích thước, ... từ trạng thái này đến trạng thái khác trong 1 khoảng thời gian nhất định (transition-duration)
+    */
+}
+
+.carousel {
+  /* background-color: green; */
+  background-image: url(./img/home_slider.jpg);
+  background-position: center;
+  background-size: cover;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.carousel .container {
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.carousel .container h1 {
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 75px;
+  line-height: 1.2;
+}
+.carousel .container h1:first-child {
+  font-weight: 300;
+  font-size: 25px;
+}
+
+.carousel .container a {
+  background-color: #d95757;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 25px;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: 300;
+  margin-top: 15px;
+}
+
+.carousel .container .icon {
+  color: #fff;
+  font-size: 30px;
+  font-weight: bold;
+
+  /* opacity: 1; thuộc tính chỉnh độ mờ của thẻ */
+  /* transform: di chuyển phần tử so với vị trí ban đầu*/
+  animation: fadeDown 1.5s;
+  /*animation-duration: 0.5s*/
+  animation-iteration-count: infinite; /*Số lần thực hiện animation*/
+}
+
+@keyframes fadeDown {
+  /* from {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+    to{
+        opacity: 0;
+        transform: translateY(100px);
+    } */
+  0% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateY(80px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+}
+
+/* Service */
+.services {
+  background-color: black;
+  color: white;
+  padding: 80px 0;
+}
+
+.title {
+  text-align: center;
+}
+
+.title p:first-of-type {
+  font-size: 15px;
+  color: red;
+  font-weight: 300;
+}
+
+.title h1 {
+  font-size: 50px;
+  font-weight: 400;
+}
+
+.title p:last-of-type {
+  font-size: 17px;
+  font-weight: 700;
+  color: gray;
+  margin-top: 20px;
+}
+
+.slick__content {
+  display: flex;
+}
+
+.slick__content {
+  margin-top: 20px;
+}
+
+.slick__content .item {
+  background-color: white;
+  color: gray;
+  width: 240px;
+  height: 210px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin: 10px;
+  position: relative;
+}
+
+.slick__content .item::after {
+  content: "";
+  width: 5px;
+  height: 0;
+  background-color: red;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: all 0.5s;
+}
+
+.slick__content .item:hover::after {
+  height: 100%;
+}
+
+.slick-dots li button:before {
+  color: gray;
+  font-size: 14px;
+}
+
+.slick-dots li button:hover::before {
+  color: white;
+}
+
+.slick-dots li.slick-active button:before {
+  color: red;
+}
+
+/* Blog */
+.blogs {
+  padding: 80px 0;
+}
+
+.blogs .title p:first-of-type {
+  color: gray;
+}
+
+.blogs__list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.blogs__list .item {
+    position: relative;
+}
+.blogs__list .item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(50%) contrast(0.5);
+}
+
+/*Không hiển thị*/
+.blogs__list .item .overlay {
+  position: absolute;
+  background-color:transparent;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  /* transform: rotateX(-360deg); */
+  /*scale(x,y)*/
+  /* transform: scale(1,0);  */
+  transition: opacity,transform 0.5s;
+
+
+}
+/*sẽ hiển thị khi hover vào item*/
+.blogs__list .item:hover .overlay{
+  opacity: 1;
+  background-color: rgba(239, 134, 134,0.5);
+  /* transform: scale(1,1); */
+
+}
+.blogs__list .overlay a {
+  position: absolute;
+  top: 30px;
+  right: 15px;
+  font-size: 16px;
+  padding: 5px 10px;
+  background-color: #fff;
+  color: #000;
+ 
+}
+.blogs__list .overlay a:hover{
+  background-color: #000;
+  color: #fff;
+  transition: all 1s;
+}
+
+
+.blogs__list .logo-title,.blogs__list .logo-content {
+  position: absolute;
+  left: 15px;
+}
+.blogs__list .logo-title {
+  bottom: 45px;
+  color: gray;
+}
+.blogs__list .logo-content{
+  bottom: 15px;
+  color: #fff;
+}
+
+.blogs__list .overlay .logo-title,.blogs__list .overlay .logo-content,.blogs__list .overlay a {
+  transform: translateY(20px);
+  transition: transform 0.5s;
+}
+.blogs__list .overlay:hover .logo-title,.blogs__list .overlay:hover .logo-content,.blogs__list .overlay:hover a {
+  transform: translateY(0);
+}
+
+
+.blog__item_1 {
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 2;
+}
+
+.blog__item_10 {
+  grid-column: 3 / span 2;
+  grid-row: 3 / span 2;
+}
+
+
+
+
+
+
+
+/*fancybox css*/
+/* header {
+  text-align: center;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+} */
+/* .container {
+  width: 80%;
+  column-count: 4;
+  margin: 0 auto;
+} */
+.grid-item img {
+  width: 100%;
+  height: auto;
+  margin: 1em;
+}
+@media only screen and (max-width: 768px) {
+  .container {
+    column-count: 3;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .container {
+    column-count: 2;
+  }
+}
+
+/*count up css*/
+
+[data-countup] {
+  font-size: 3rem;
+  font-family:impact;
+}
+
+
+/*css statis*/
+.statis {
+  background-color: #000;
+  padding:30px;
+}
+.statis .list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.statis .list .item{
+  color: #fff;
+  text-transform: uppercase;
+  padding: 30px;
+  text-align: center;
+  font-weight: 300;
+}
+.statis .list .item h1{
+  color: gray;
+}
+
+/*digital*/
+.digital {
+  height: 800px;
+  background: url(./img/bussiness_img_1.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
+.digital .container {
+  text-align: center;
+  padding-top: 50px;
+}
+.digital h1 {
+  font-size: 16px;
+  color: red;
+  font-weight: 300;
+}
+.digital h2 {
+  font-size: 50px;
+  color: #fff;
+  font-weight: 300;
+}
+.digital p{
+  color: gray;
+  font-weight: bold;
+  margin-bottom: 30px;
+} 

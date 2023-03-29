@@ -1,0 +1,24 @@
+@import "../../themes/default_theme";
+
+.button-primary {
+    @include button($fs-base,$fw-light,$text-c0-light,$bg-c0-primary,none,5px,20px,$text-c0-light,$bg-c0-dark);
+}
+
+.text-base{
+    @include text($fs-base,$fw-normal,$text-c0-dark);
+}
+
+.text-title{
+    @include text($fs-3xl,$fw-semibold,$text-c0-dark);
+}
+
+.text-title-shadow{
+    @extend .text-title;
+    -webkit-box-shadow: 1px 9px 5px 0px rgba(42, 115, 221, 0.59);
+    box-shadow: 1px 9px 5px 0px rgba(42, 115, 221, 0.59);
+}
+
+
+
+
+

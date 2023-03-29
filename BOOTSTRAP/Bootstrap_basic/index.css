@@ -1,0 +1,15 @@
+/* 
+<px>: điểm ảnh
+<%> : so với thẻ cha
+
+mặc định trình duyệt font-size: 16px
+
+<rem> ( tính theo font-size của trình duyệt )
+<em> : tính theo font-size thẻ cha
+
+vh: theo chiều cao tối đa của màn hình thiết bị
+vw: theo chiều rộng tối đa của màn hình thiết bị
+*/
+* {
+    box-sizing: border-box;
+}

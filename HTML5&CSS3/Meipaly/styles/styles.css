@@ -1,0 +1,139 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    width: 1280px;
+    /* TẠI SAO DÙNG MAX-WIDTH-> tránh xuất hiện cây roll */
+    margin: 0 auto;
+
+}
+.clear{
+    clear:both;
+}
+/* HEADER */
+.header{
+    /* background-color: black; */
+    background: transparent; /*TRONG SUỐT: ko có màu*/
+    height: 80px;
+    border-bottom: 1px solid white;
+    position:absolute;
+    z-index: 1;
+    width: 100%;
+    
+}
+/* display-flex: chỉnh ở thằng cha - nếu trình duyệt không hỗ trợ thì bắt buộc dùng float */
+.header .container{
+    height: 100%;
+    display: flex;
+    flex-direction: row; 
+    /*đổi trục chính của phần tử */
+    align-items: center;
+    justify-content: space-between; 
+    /*dùng để load item theo trục chính của flex*/
+}
+    /*
+    flex-start: từ trái qua phải hoặc trên xuống dưới
+    center: từ giữa đi ra
+    flex-end: từ bên phải qua trái hoặc dưới lên trên
+    space-between: load từ 2 bên lần lượt đi vào trong
+    space-around: load theo đều khỏang cách phần tử con 
+    */
+    /*************
+    JUSTIFY-CONTENT: trục tung từ start center end
+    ALIGN-ITEMS: trục hoành từ end center start
+    */
+.header a{
+    text-decoration: none;
+    color: #fff;
+    font-family: 'Oswald';
+}
+.header .header-logo{
+    font-size: 32px;
+    font-weight: ;
+}
+/* .header .header-logo span{
+    font-weight: bolder;
+}     */
+.header .header-menu a{
+    font-size: 17px;
+    margin: 0 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+    /* transition: color 0.5s; */
+/* HOVER: */
+.header .header-menu a:hover{
+    color:#e62b4a;
+    /* font-size: 50px; */
+    transition: color 0.5s;
+    /* transition-duration:0.5s; */
+}
+/* TRANSITION: setup thay đổi màu sắc,kích thước,... từ trạng thái này đến trạng thái khác */
+
+/* CAROUSEL */
+.carousel{
+    background-image: url(../img/image-video/home_slider.jpg);
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+}
+.carousel .container{
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+}
+.carousel .container h1{
+    color: white;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 70px;
+    line-height: 1.2;
+}    
+.carousel .container h1:first-child{
+    font-weight: 300;
+    font-size: 25px;
+}
+
+.carousel .container a{
+    text-decoration: none;
+    background-color: #e62b4a;
+    color: white;
+    padding: 10px 20px;
+    text-transform: uppercase;  
+    font-size:  20px;
+    font-weight: 300;
+    margin-top: 15px;  
+}
+
+.carousel .container i{
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+    opacity: 1;
+    /* opacity: 1; thuộc tính chỉnh độ mở của thẻ*/
+    transform: translateY(50px);
+    /* tranform: di chuyển phân tử so với vị trí ban đầu */
+    animation: fadeDown 2s;
+    /*animation-duration: 0.5d*/
+    animation-iteration-count: infinite; /* Số lần thực hiện*/
+}
+
+@keyframes fadeDown {
+    from{
+        opacity: 1;
+        transform: translateY(0px)
+    }
+    to{
+        opacity: 0;
+        transform: translateY(50px);
+    }
+}
